@@ -1,0 +1,425 @@
+.maPage
+{
+  text-align: center;
+  width:1080px;
+}
+/* la div du fond de mon jeux
+*/
+.emplacementJeux
+{
+  display: inline-block;
+  position: absolute;
+  margin: auto;
+  width: 900px;
+  height: 700px;
+  border: 1px solid black;
+  overflow: hidden;
+  z-index: 2;
+}
+.fondBouge
+{
+  position: absolute;
+  z-index: 50;
+  left: 0px;
+}
+/* Mon Bouton Continuer
+*/
+.boutonContinuer
+{
+  position: absolute;
+  z-index: 50;
+  left: 1350px;
+  top: 648px;
+  display: none;
+}
+/*
+ Bouton start et
+*/
+.start
+{
+  position: absolute;
+  z-index: 800;
+  left: 880px;
+  top: 390px;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+/* bouton suite du texte*/
+.defilement
+{
+  position: absolute;
+  z-index: 100;
+  left: 1350px;
+  top: 648px;
+  display: none;
+}
+/*
+Fenetre game over + reesayer
+*/
+.loose
+{
+  position: absolute;
+  z-index: 50;
+  left: 900px;
+  top: 350px;
+  display: inline-block;
+  border: black 2px solid;
+  border-radius: 20px;
+  opacity: 0;
+  background-color: silver;
+  width: 220px;
+  height: 50px;
+  font-weight: bold;
+}
+.retry
+{
+  position: absolute;
+  z-index: 50;
+  left: 950px;
+  top: 400px;
+  display: inline-block;
+  opacity: 0;
+  border-radius: 10px;
+}
+/*
+effet matric en continu derriere
+*/
+.videoSous
+{
+  display: inline-block;
+  position: absolute;
+  margin: auto;
+  width: 900px;
+  height: 700px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.videoFond
+{
+  position: absolute;
+  background-size: cover;
+  left:0;
+  top:0;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: 1;
+}
+/*
+  Cv qui apparait a la fin
+*/
+.CvCacher
+{
+  position: relative;
+  width: 814px;
+  height: 900px;
+  z-index: 10;
+  left: 595px;
+  top: -110px;
+}
+#cvAnael
+{
+  opacity: 0;
+}
+/*
+CV a DL
+*/
+.cvDDL
+{
+  position: absolute;
+  left: 935px;
+  top: 12px;
+  z-index: 10000;
+}
+.cvDDL a
+{
+  color: black;
+  text-decoration: none;
+}
+/*
+Sprite MCDo
+*/
+.cacheSpriteMcdo
+{
+  opacity: 0;
+}
+.conteneurSpriteMcDo
+{
+  position: absolute;
+  width: 50px;
+  height: 71px;
+  overflow: hidden;
+  z-index: 80;
+  top: 550px;
+  left: 900px;
+}
+.spriteMcDo
+{
+  position: absolute;
+  left: 0px;
+}
+/*
+Sprite Ordi
+*/
+.cacheSpriteOrdi
+{
+  opacity: 0;
+}
+.conteneurSpriteOrdi
+{
+  position: absolute;
+  width: 124px;
+  height: 70px;
+  overflow: hidden;
+  z-index: 90;
+  top: 550px;
+  left: 900px;
+}
+.spriteOrdi
+{
+  position: absolute;
+  left: 0px;
+}
+.cacheSpriteOrdi2
+{
+  opacity: 0;
+}
+.conteneurSpriteOrdi2
+{
+  position: absolute;
+  width: 124px;
+  height: 70px;
+  overflow: hidden;
+  z-index: 90;
+  top: 550px;
+  left: 900px;
+}
+.spriteOrdi2
+{
+  position: absolute;
+  left: 0px;
+}
+/*
+Sprite Statues
+*/
+.cacheSpriteStatues
+{
+  opacity: 0;
+}
+.conteneurSpriteStatues
+{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  z-index: 100;
+  top: 560px;
+  left: 900px;
+}
+.spriteStatues
+{
+  position: absolute;
+  left: 0px;
+  top: -130px;
+}
+/*
+Sprite perso jouable
+*/
+.cacheSpriteMoi
+{
+  display: none;
+}
+.conteneurSpriteMoi
+{
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  z-index: 150;
+  top: 550px;
+  left: -10px;
+}
+.spriteMe
+{
+  position: absolute;
+  left: 0px;
+  top: -192px;
+}
+/*
+ Texte defilant dans le jeu
+*/
+.defileBlock
+{
+  display: block;
+	margin: 3em auto;
+	overflow: hidden;
+	position: relative;
+	table-layout: fixed;
+	width: 700px;
+  top: 600px;
+  left: 450px;
+  z-index: 600;
+  background-color: black;
+  opacity: 0.6;
+}
+.defile
+{
+  display:block;
+  animation:linear marqueelike 20s infinite ;
+  margin-left:-100%;
+  padding:0 5px;
+  text-align:left;
+  height:25px;
+  overflow: hidden;
+}
+@keyframes marqueelike {
+ 	0%, 100% {margin-left:0;}
+ 	99.99% {margin-left:-100%;}
+ }
+#un /*Monde, Base*/
+{
+  color: white;
+  display: block;
+  height: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#deux /*Bresil*/
+{
+  display: none;
+  color: white;
+  height: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#trois /*Mexique*/
+{
+  display: none;
+  height: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: white;
+}
+#quatre /*Europe*/
+{
+  display: none;
+  height: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: white;
+}
+#cinq /*Colombie*/
+{
+  display: none;
+  height: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: white;
+}
+/*
+ Texte d'avant combat mcdo + bouton début
+*/
+.beforeCombat1
+{
+  display: none;
+	position: relative;
+	width: 400px;
+  top: 220px;
+  left: 800px;
+  z-index: 600;
+  background-color: silver;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
+/*
+ Texte d'avant combat ordi + bouton début
+*/
+.beforeCombat2
+{
+  display: none;
+	position: relative;
+	width: 400px;
+  top: 220px;
+  left: 800px;
+  z-index: 600;
+  background-color: silver;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
+/*
+ Texte d'avant combat ordi + bouton début
+*/
+.beforeCombat3
+{
+  display: none;
+	position: relative;
+	width: 400px;
+  top: 220px;
+  left: 800px;
+  z-index: 600;
+  background-color: silver;
+  border: black 2px solid;
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
+/*
+Info personnage (photo,vie, skill ?)
+*/
+.personnage
+{
+  position: absolute;
+  display: block;
+  width: 110px;
+  background-color: white;
+  z-index: 900;
+  border: gold 2px solid;
+  border-radius: 5px;
+  padding-top: 5px;
+  left: 560px;
+  top: 60px;
+}
+.portrait
+{
+  border: black 1px solid;
+  border-radius: 45px;
+}
+.barreVie
+{
+  border: black 1px solid;
+  height: 15px;
+  width: 100px;
+  display: inline-block;
+}
+.vieActuel
+{
+  height: 15px;
+  width: 100px;
+  background-color: red;
+}
+/***************************
+Aside
+**************************/
+.talentsADebloque
+{
+  position: absolute;
+  height: 700px;
+  width: 400px;
+  border: red 2px solid;
+  top: 47px;
+  left: 85px;
+  text-align: center;
+  font-size: 1.2em;
+}
+.talentDebloque
+{
+  position: absolute;
+  height: 700px;
+  width: 400px;
+  border: red 2px solid;
+  top: 47px;
+  left: 1500px;
+  text-align: center;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jeux Cv</title>
+    <link rel="stylesheet" href="css/PageJeux.css" type="text/css">
+    <link rel="stylesheet" href="css/Logo.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/PageJeux.js"></script>
+    <script type="text/javascript" src="js/spriteMac.js"></script>
+    <script type="text/javascript" src="js/spriteOrdi1.js"></script>
+    <script type="text/javascript" src="js/spriteStatues1.js"></script>
+    <script type="text/javascript" src="js/spriteMoi.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <div class="cvDDL">
+        <a href="img/CV Anael DIWJS.pdf" download="img/CV Anael DIWJS">Télécharger mon CV</a>
+      </div>
+    </header>
+
+    <section>
+
+      <article class="maPage">
+
+        <div class="videoSous">
+          <video autoplay muted loop preload>
+            <source src="img/fondMatrix.mp4" type="video/mp4"/>
+          </video>
+        </div>
+        <div class="emplacementJeux">
+          <img class="fondBouge" src="img/fondJeux.png" alt="fond de mes jeux" />
+
+          <div class="cacheSpriteMoi">
+            <div class="conteneurSpriteMoi">
+              <img class="spriteMe" src="img/MeKnife.png" alt="moi et mon couteau" />
+            </div>
+          </div>
+          <div class="cacheSpriteMcdo">
+            <div class="conteneurSpriteMcDo">
+              <img class="spriteMcDo" src="img/SpriteMac.png" alt="" />
+            </div>
+          </div>
+          <div class="cacheSpriteOrdi">
+            <div class="conteneurSpriteOrdi">
+              <img class="spriteOrdi" src="img/spriteOrdiGrand.png" alt="" />
+            </div>
+          </div>
+          <div class="cacheSpriteOrdi2">
+            <div class="conteneurSpriteOrdi2">
+              <img class="spriteOrdi2" src="img/spriteOrdiGrand.png" alt="" />
+            </div>
+          </div>
+          <div class="cacheSpriteStatues">
+            <div class="conteneurSpriteStatues">
+              <img class="spriteStatues" src="img/AthenaSprite.png" alt="" />
+            </div>
+          </div>
+
+        </div>
+        <button type="button" class="boutonContinuer" name="buttonContinuer">Continuer -></button>
+        <div class="loose">Vous avez perdu, réessayer !
+                           You lost, try again !
+        </div>
+        <button type="button" class="retry" name="buttonRetry">Réessayer / Retry</button>
+        <button type="button" class="start" name="buttonStart">Commencer le Jeux</button>
+        <button type="button" class="defilement" name="buttonText">Suite -></button>
+        <div class="defileBlock">
+          <span id="un">Bonjour et bienvenu dans ce petit jeux Cv, dans ce jeux qui retrasse une bonne parti de mon parcours, vous aurait l'ocasion de déplacer et meme d'attaquer avec mon avatar (en armure). Sachez que les enemis sont fragile, mais mon avatar l'est aussi, alors tachez d'etre le plus rapide à attaquez</span>
+          <span id="deux">Le Brésil à était mon 1er voyage loin (très loin) de chez moi. J'etait bien jeune (15ans) je ne me souvient pas de tout, mais sa à était ma 1ere véritable ouverture sur le monde, différentes cultures et différents language.</span>
+          <span id="trois">Le Mexique, à la différence du voyage au Bresil qui m'avait était complétement offert, j'ai participé grace au sous empoché sur quelque petit job, dabord dans le batiment (poncage, pose de papier peint, etc..), puis en tant que gardien de parking et enfin en tant que serveur (chez buffalo Grill)</span>
+          <span id="quatre">Durant mes longue années chez McDonald's, j'ai fait bien des choses entre autre 2 voyage en Allemagne , puis Espagne, mais aussi une formation de Technicien d'assistance informatique suivi d'une prépa en Design Graphique, le tout couplé à mon travail chez McDonald's avec ces horaires ajustable (point fort de ce travail).</span>
+          <span id="cinq">Après ma prépa je suis partie visité la Colombie (superbe voyage et superbe personnes ces colombiens), en revenant je me suis lancer dans des tutos sur le web (en commencent gentiment avec Html/Css) puis je suis entré chez IFOCOP pour leur formation de Développeur Intégrateur Web Full Stack JavaScript. Je suis encore actuelement en formation et à la recherche d'une entreprise ou je pourai travailler pendant 4 mois pour valider cette formation.</span>
+        </div>
+        <div class="beforeCombat1">
+          <p>Pour vous déplacer utilisé les touches directionel DROITE/GAUCHE du clavier, pour attaquer c'est la touche ENTREE.</p>
+          <p>Maintenant que vous avez les bases aller donc preparer de bons Burgers</p>
+          <button class="fight1" type="button" name="startFight">Let's cook these burgers</button>
+        </div>
+        <div class="beforeCombat2">
+          <p>Même principe que pour le burger, mais cet fois il vous faut réparer ces écrans fou</p>
+          <button class="fight2" type="button" name="startFight">Let's repair these screens</button>
+        </div>
+        <div class="beforeCombat3">
+          <p>Même principe que pour les 2 autres, mais cet fois il vous faut vaincre les statues animés</p>
+          <button class="fight3" type="button" name="startFight">Let's restore those statues</button>
+        </div>
+        <div class="personnage">
+            <img class="portrait" src="img/portrait.png" alt="Portrait Avatar" />
+          HP:
+          <div class="barreVie">
+            <div class="vieActuel"></div>
+          </div>
+        </div>
+
+      </article>
+
+      <aside class="talentsADebloque">
+        <h1>Talents à débloqués</h1>
+        <img id="meteor" src="img/logoMeteor.png" alt="Logo Meteor js" />
+        <img id="ajax" src="img/logoAjax.png" alt="Logo Ajax" />
+        <img id="angular" src="img/logoAngular.png" alt="Logo Angular js" />
+        <img id="htmlCss" src="img/logoHtmlCss.png" alt="Logo Html/Css" />
+        <img id="bootstrap" src="img/logoBootstrap.png" alt="Logo Bootstrap" />
+        <img id="express" src="img/logoExpress.png" alt="Logo Express" />
+        <img id="jQuery" src="img/logojQuery.png" alt="Logo JQuery" />
+        <img id="javascript" src="img/logoJs.png" alt="Logo javascript" />
+        <img id="photoshop" src="img/logoPhotoshop.png" alt="Logo Photoshop" />
+        <img id="mongo" src="img/logoMongo.png" alt="Logo Mongo DB" />
+        <img id="node" src="img/logoNodeJs.png" alt="Logo Node Js">
+      </aside>
+
+      <div class="talentDebloque">
+        <h2>Mes talents</h2>
+      </div>
+
+      <div class="CvCacher">
+        <img id="cvAnael" src="img/cv.png" alt="cv" />
+      </div>
+
+    </section>
+
+  </body>
+</html>

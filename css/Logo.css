@@ -1,0 +1,180 @@
+/* proprieter de base des logo */
+#meteor, #angular, #ajax, #bootstrap, #express, #jQuery, #javascript, #photoshop, #htmlCss, #mongo
+{
+  opacity: 0.3;
+  z-index: 4000;
+}
+#node
+{
+  opacity: 0;
+}
+
+/* Animation des logos*/
+.meteorMoov
+{
+	animation: meteor 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes meteor {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:600px;}
+    50%  {opacity: 0.7:blue; left:650px; top:650px;}
+    75%  {opacity: 0.9; left:1300px; top:650px;}
+    100% {opacity: 1; left:1400px; top:-5px;}
+}
+.angularMoov
+{
+	animation: angular 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes angular {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:500px;}
+    50%  {opacity: 0.7:blue; left:650px; top:550px;}
+    75%  {opacity: 0.9; left:1300px; top:550px;}
+    100% {opacity: 1; left:1380px; top:90px;}
+}
+.ajaxMoov
+{
+	animation: ajax 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes ajax {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:600px;}
+    50%  {opacity: 0.7:blue; left:650px; top:650px;}
+    75%  {opacity: 0.9; left:1300px; top:650px;}
+    100% {opacity: 1; left:1400px; top:-5px;}
+}
+.htmlCssMoov
+{
+	animation: htmlCss 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes htmlCss {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:100px; top:500px;}
+    50%  {opacity: 0.7:blue; left:600px; top:550px;}
+    75%  {opacity: 0.9; left:1300px; top:550px;}
+    100% {opacity: 1; left:1425px; top:-5px;}
+}
+.bootstrapMoov
+{
+	animation: bootstrap 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes bootstrap {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:420px;}
+    50%  {opacity: 0.7:blue; left:650px; top:450px;}
+    75%  {opacity: 0.9; left:1250px; top:450px;}
+    100% {opacity: 1; left:1290px; top:-110px;}
+}
+.expressMoov
+{
+	animation: express 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes express {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:320px;}
+    50%  {opacity: 0.7:blue; left:650px; top:350px;}
+    75%  {opacity: 0.9; left:1250px; top:350px;}
+    100% {opacity: 1; left:1460px; top:-95px;}
+}
+.jQueryMoov
+{
+	animation: jQuery 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes jQuery {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:200px;}
+    50%  {opacity: 0.7:blue; left:650px; top:250px;}
+    75%  {opacity: 0.9; left:1300px; top:250px;}
+    100% {opacity: 1; left:1400px; top:-90px;}
+}
+.javascriptMoov
+{
+	animation: javascript 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes javascript {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:200px;}
+    50%  {opacity: 0.7:blue; left:650px; top:250px;}
+    75%  {opacity: 0.9; left:1300px; top:250px;}
+    100% {opacity: 1; left:1400px; top:-100px;}
+}
+.photoshopMoov
+{
+	animation: photoshop 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes photoshop {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:200px;}
+    50%  {opacity: 0.7:blue; left:650px; top:250px;}
+    75%  {opacity: 0.9; left:1300px; top:250px;}
+    100% {opacity: 1; left:1400px; top:-95px;}
+}
+.mongoMoov
+{
+	animation: mongo 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes mongo {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:100px;}
+    50%  {opacity: 0.7:blue; left:650px; top:150px;}
+    75%  {opacity: 0.9; left:1300px; top:150px;}
+    100% {opacity: 1; left:1410px; top:-95px;}
+}
+.nodeMoov
+{
+	animation: node 5s linear alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes node {
+    0%  {opacity: 0.3; left:0px; top:0px;}
+    25%  {opacity: 0.5; left:300px; top:10px;}
+    50%  {opacity: 0.7:blue; left:650px; top:50px;}
+    75%  {opacity: 0.9; left:1300px; top:50px;}
+    100% {opacity: 1; left:1410px; top:-110px;}
+}
+/*Animation du Cv*/
+.cvAnaelMoov
+{
+	animation: cvA 5s linear;
+	animation-iteration-count: 1;
+	position: relative;
+}
+@keyframes cvA {
+    0%  {opacity: 0.3; transform: scale(0.2) rotate(0deg);}
+    25%  {opacity: 0.5; transform: scale(0.4) rotate(260deg);}
+    50%  {opacity: 0.7:blue; transform: scale(0.6) rotate(520deg);}
+    75%  {opacity: 0.9; transform: scale(0.8) rotate(780deg);}
+    100% {opacity: 1; transform: scale(1) rotate(1080deg);}
+}
