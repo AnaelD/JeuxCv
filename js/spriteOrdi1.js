@@ -50,9 +50,9 @@ var spriteOrdi = function() {
       else { // sinon
         hpJoueur = hpJoueur - 100; // la c'est le jouable qui perd ces hp
          // reduit la barre de vie de  moitier
-        $('.spriteMe').fadeOut(500).delay(100).fadeIn(500); // faire clignoter mon perso quand toucher
+        //$('.spriteMe').fadeOut(500).delay(100).fadeIn(500); // faire clignoter mon perso quand toucher (enlever pour l'instant)
         if(hpJoueur <= 1) { // si hp du perso tombe a 0 alors
-          maMort();// animation de mon perso qui die +
+          maMort();// animation de mon perso qui die
           $('.loose').css('opacity',1); // je fait apparaitre la div loose et
           $('.retry').css('opacity',1); // le bouton ressayer
           clearInterval(animConteurOrdi);
@@ -60,9 +60,9 @@ var spriteOrdi = function() {
           $('.retry').click(function() { // au click sur le bouton reesayer sa
             $('.loose').css('opacity',0); // je fait disparaitre la div loose et
             $('.retry').css('opacity',0); // le bouton ressayer
-             // je vire l anim mcdo
-            $('.cacheSpriteOrdi').css('display','none');
-            $('.conteneurSpriteOrdi').css('left', '900px');
+             // je vire l anim ordi
+            $('.cacheSpriteOrdi').css('display','none'); // disparait
+            $('.conteneurSpriteOrdi').css('left', '900px'); // repart a droite
             // et celle du perso
             $('.cacheSpriteMoi').css('display','none'); // disparait
             $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche

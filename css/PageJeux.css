@@ -260,30 +260,80 @@ Sprite perso jouable
   top: 600px;
   left: 450px;
   z-index: 600;
+  opacity: 0.9;
   background-color: black;
-  opacity: 0.6;
 }
+/*texte Monde et Mexique*/
 .defile
 {
   display:block;
-  animation:linear marqueelike 20s infinite ;
-  margin-left:-100%;
+  animation:moovText linear 20s normal;
+  animation-iteration-count: 1;
+  margin-left:-290%;
   padding:0 5px;
   text-align:left;
   height:25px;
   overflow: hidden;
 }
-@keyframes marqueelike {
- 	0%, 100% {margin-left:0;}
- 	99.99% {margin-left:-100%;}
+@keyframes moovText {
+ 	0% {margin-left:0;}
+ 	100% {margin-left:-290%;}
  }
+/* Text Bresil*/
+ .defile2
+ {
+   display:block;
+   animation:moovText2 linear 15s normal;
+   animation-iteration-count: 1;
+   margin-left:-180%;
+   padding:0 5px;
+   text-align:left;
+   height:25px;
+   overflow: hidden;
+ }
+@keyframes moovText2 {
+  	0% {margin-left:0;}
+  	100% {margin-left:-180%;}
+}
+/* Text Europe*/
+.defile3
+{
+   display:block;
+   animation:moovText3 linear 20s normal;
+   animation-iteration-count: 1;
+   margin-left:-330%;
+   padding:0 5px;
+   text-align:left;
+   height:25px;
+   overflow: hidden;
+}
+@keyframes moovText3 {
+  	0% {margin-left:0;}
+  	100% {margin-left:-330%;}
+}
+/* Text Colombie*/
+.defile4
+{
+   display:block;
+   animation:moovText4 linear 25s normal;
+   animation-iteration-count: 1;
+   margin-left:-480%;
+   padding:0 5px;
+   text-align:left;
+   height:25px;
+   overflow: hidden;
+}
+@keyframes moovText4 {
+    0% {margin-left:0;}
+    100% {margin-left:-480%;}
+}
 #un /*Monde, Base*/
 {
   color: white;
   display: block;
   height: 25px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 #deux /*Bresil*/
 {
@@ -291,14 +341,14 @@ Sprite perso jouable
   color: white;
   height: 25px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 #trois /*Mexique*/
 {
   display: none;
   height: 25px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: white;
 }
 #quatre /*Europe*/
@@ -306,7 +356,7 @@ Sprite perso jouable
   display: none;
   height: 25px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: white;
 }
 #cinq /*Colombie*/
@@ -314,7 +364,7 @@ Sprite perso jouable
   display: none;
   height: 25px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: white;
 }
 /*

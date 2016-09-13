@@ -25,20 +25,20 @@ $(document).ready(function() {
   // bouton pour lire le texte
   $('.defilement').click(function(){
     nbClick = nbClick + 1; // compteur qui s'incremente de 1 a chaque fois que je click sur suite
-    $('#un').addClass('defile'); // je rajoute la class qui fait defile le 1er teste
+    $('#un').addClass('defile'); // je rajoute la class qui fait defile le 1er teste (monde)
     $('.defilement').css('display','none'); // je fait disparaitre le bouton suite
     setTimeout(voirBouton, 1000); // je fait apparaitre le bouton continuer au bout de 5sec.
     if(nbClick == 2) { // si c'est la 2eme fois que je click sur suite alors
-      $('#deux').addClass('defile'); // je met la classe defile sur le 2eme texte
+      $('#deux').addClass('defile2'); // je met la classe defile sur le 2eme texte (bresil)
     }
     if(nbClick == 3){
-      $('#trois').addClass('defile');
+      $('#trois').addClass('defile'); // texte mexique
     }
     if(nbClick == 4){
-      $('#quatre').addClass('defile');
+      $('#quatre').addClass('defile3'); // texte europ
     }
     if(nbClick == 5){
-      $('#cinq').addClass('defile');
+      $('#cinq').addClass('defile4'); // texte colombie
     }
   })
   // qunad je click sur le bouton lets cook:
