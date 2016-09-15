@@ -59,21 +59,7 @@ var spriteStatues = function() {
           $('.retry').css('opacity',1); // le bouton ressayer
           clearInterval(animConteurStatues);
           clearInterval(animSrpiteStatues);
-          $('.retry').click(function() { // au click sur le bouton reesayer sa
-            $('.loose').css('opacity',0); // je fait disparaitre la div loose et
-            $('.retry').css('opacity',0); // le bouton ressayer
-             // je vire l anim
-            $('.cacheSpriteStatues').css('display','none');
-            $('.conteneurSpriteStatues').css('left', '900px');
-            $('.spriteStatues').css('left', '0px');
-            // et celle du perso
-            $('.cacheSpriteMoi').css('display','none'); // disparait
-            $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
-            // puis
-            $('.beforeCombat3').css('display','block'); // me ramene au debut du fight
-            fullHp = $('.vieActuel').css('width','100px');
-            hpJoueur = 100;
-          })
+          // le retry est sur pageJeux js
         }
       }
     }

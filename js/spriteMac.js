@@ -60,20 +60,6 @@ var spriteMcDo = function() {
           $('.retry').css('opacity',1); // le bouton ressayer
           clearInterval(animConteurMcDO);
           clearInterval(animSrpiteMcDo);
-          $('.retry').click(function() { // au click sur le bouton reesayer sa
-            $('.loose').css('opacity',0); // je fait disparaitre la div loose et
-            $('.retry').css('opacity',0); // le bouton ressayer
-             // je vire l anim mcdo
-            $('.cacheSpriteMcdo').css('display','none');
-            $('.conteneurSpriteMcDo').css('left', '900px');
-            // et celle du perso
-            $('.cacheSpriteMoi').css('display','none'); // disparait
-            $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
-            // puis
-            $('.beforeCombat1').css('display','block'); // me ramene au debut du fight
-            fullHp = $('.vieActuel').css('width','100px');
-            hpJoueur = 100;
-          })
         }
       }
     }

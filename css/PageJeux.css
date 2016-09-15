@@ -29,7 +29,7 @@
   position: absolute;
   z-index: 50;
   left: 1350px;
-  top: 648px;
+  top: 630px;
   display: none;
 }
 /*
@@ -51,8 +51,8 @@
 {
   position: absolute;
   z-index: 100;
-  left: 1350px;
-  top: 648px;
+  left: 1305px;
+  top: 611px;
   display: none;
 }
 /*
@@ -128,8 +128,8 @@ CV a DL
 .cvDDL
 {
   position: absolute;
-  left: 935px;
-  top: 12px;
+  left: 900px;
+  top: -30px;
   z-index: 10000;
 }
 .cvDDL a

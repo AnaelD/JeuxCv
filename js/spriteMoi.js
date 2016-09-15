@@ -65,11 +65,13 @@ var persoJouable = function() {
         spriteInConteneur.css('left', '0px'); // je repart de zero (boucle)
       }
       if(positionActuelDuFondLeft <= -6300 && positionActuelDuFondLeft >= -8095) { // quand je suis sur les fonds ordi alors
-        if(positionPersoGauche > 430) {// si je suis a + de 600px sur la double page alors
+        if(positionPersoGauche > 470) {// si je suis a + de X px sur la double page alors
           $('.fondBouge').css('left', positionActuelDuFondLeft - 10 + 'px'); // je deplace le fond
           positionActuelDuFondLeft = parseFloat($('.fondBouge').css('left')); // et je re stock l'info de position
+          positionPersoGauche -= 5; // dire a mon perso d'arreter de se deplacer vu que l'ecran bouge deja..
+          $('.conteneurSpriteMoi').css('left', positionPersoGauche);
         }
-        if(positionPersoGauche == 500){
+        if(positionPersoGauche == 460){
           // je fait apparaitre un otres sprites ordi et
           $('.cacheSpriteOrdi2').css('opacity', 1);
           $('.cacheSpriteOrdi2').css('display', 'inline-block');

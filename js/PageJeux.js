@@ -1,26 +1,34 @@
 // code du background du jeux
 var positionActuelDuFondLeft;
 var voirBouton;
+var animBouton;
 $(document).ready(function() {
 
-  // je lance la fonction de mon perso jouable une seul fois au tout debut (meme s il est cacher)
-  persoJouable();
-
+  persoJouable();  // je lance la fonction de mon perso jouable une seul fois au tout debut (meme s il est cacher)
   positionActuelDuFondLeft = parseFloat($('.fondBouge').css('left'));
   var nbClick = 0;
+
+  var boutonContinuerFonction = function(){ // fonction qui fait bouger le bouton continuer
+    $('.boutonContinuer').animate({top: '635px'}, 500, 'linear', function(){
+        $('.boutonContinuer').animate({top: '630px'}, 500, 'linear')
+    });
+  };
+  animBouton = setInterval(boutonContinuerFonction, 1000); // interval sur la fonction qui fait bouger le bouton pour que sa soit permanent
+
   // fonction qui fait apparaitre mon persoJouable
   var monApparition = function() {
     $('.cacheSpriteMoi').css('display', 'inline-block');
+    $('.conteneurSpriteMoi').css('opacity',1);
   };
   // fonction pour faire apparaitre le bouton continuer (et l utilise dans des timeout)
   voirBouton = function() {
     $('.boutonContinuer').css('display','inline-block');
-  }
+  };
   // pour commencer
   $('.start').click(function(){
     $('.start').css('display','none');
     $('.defilement').css('display','block');
-  })
+  });
 
   // bouton pour lire le texte
   $('.defilement').click(function(){
@@ -45,6 +53,7 @@ $(document).ready(function() {
   $('.fight1').click(function() {
     $('.beforeCombat1').css('display','none'); // je fait disp les explication et le bouton puis
     $('.conteneurSpriteMoi').css('left', '10px'); // mon perso repart a gauche
+    spriteInConteneur.css('left','0px');
     // J'enleve le css qui cacher mon sprite et
     monApparition();
     // j'enleve aussi celui du sprite mcdo
@@ -58,6 +67,7 @@ $(document).ready(function() {
   $('.fight2').click(function() {
     $('.beforeCombat2').css('display','none'); // je fait disp les explication et le bouton puis
     $('.conteneurSpriteMoi').css('left', '10px'); // mon perso repart a gauche
+    spriteInConteneur.css('left','0px');
     // J'enleve le css qui cacher mon sprite et
     monApparition();
     // je fait apparaitre les sprites ordi et
@@ -70,6 +80,7 @@ $(document).ready(function() {
   $('.fight3').click(function() {
     $('.beforeCombat3').css('display','none'); // je fait disp les explication et le bouton puis
     $('.conteneurSpriteMoi').css('left', '10px'); // mon perso repart a gauche
+    spriteInConteneur.css('left','0px');
     // J'enleve le css qui cacher mon sprite et
     monApparition();
     // je fait apparaitre les sprites statue et
@@ -82,15 +93,16 @@ $(document).ready(function() {
   // ce qu'il ce passe quand je click sur le boutonContinuer :
   $('.boutonContinuer').click(function() {
     $('.boutonContinuer').css('display','none');// a chaque fois que je click sur le bouton continuer il fait ce qu'il a a faire puis disparait
+    $('.conteneurSpriteMoi').css('opacity',0); // je cache mon perso a chaque fois que j'appuie sur continuer
     // si la position de me fond se trouve entre 0 et - 10800 alors
     if(positionActuelDuFondLeft <= 0 && positionActuelDuFondLeft > -10800) {
       // a chaque click l'opaciter de l'image de fond(qui est une LONGUEEE image avec tous mes background) passe a 0 (en 2sec) et
-      $('.fondBouge').animate({opacity: 0}, 500, 'linear', function() { // 2000 normalmeent
+      $('.fondBouge').animate({opacity: 0}, 2000, 'linear', function() { // 2000 normalmeent
         // je deplace l'image de fond de -900 pixel vers la gauche (pour mettre en place le nouveau background)
         $('.fondBouge').css('left', positionActuelDuFondLeft - 900 + 'px');
       })
       // puis je rechange l'opaciter a 1(tjr en 2sec) pour faire apparaitre le nouveau background
-      $('.fondBouge').animate({opacity: 1}, 500, 'linear', function() { // 2000 normalement
+      $('.fondBouge').animate({opacity: 1}, 2000, 'linear', function() { // 2000 normalement
         positionActuelDuFondLeft = parseFloat($('.fondBouge').css('left'));
       })
       // quand j'arrive sur la fenetre bresil
@@ -105,13 +117,14 @@ $(document).ready(function() {
         $('#deux').css("display",'none'); // j'efface le 2eme texte
         $('.defilement').css('display','none'); // j efface le bouton suite
         $('.boutonContinuer').css('display','block');
-        monApparition(); // j 'apparait (pour rien, pas d'enemi)'
+        setTimeout(monApparition, 2500); // j 'apparait (pour rien, pas d'enemi)'
         $('#angular').addClass('angularMoov');
       }
       // ville 2
       if(positionActuelDuFondLeft == -1800){
         $('.boutonContinuer').css('display','block');
         $('#ajax').addClass('ajaxMoov');
+        setTimeout(monApparition, 2500); // j 'apparait (pour rien, pas d'enemi)'
       }
       // Mexique
       if(positionActuelDuFondLeft == -2700){
@@ -127,6 +140,21 @@ $(document).ready(function() {
         $('.defilement').css('display','none'); // j'eface le bouton suite
         $('#trois').css('display','none'); // et le texte aussi
         $('.beforeCombat1').css('display','block'); // je fait apparaitre ma div avec explication + bouton lets cook
+        $('.retry').unbind('click');
+        $('.retry').click(function() { // au click sur le bouton reesayer sa
+          $('.loose').css('opacity',0); // je fait disparaitre la div loose et
+          $('.retry').css('opacity',0); // le bouton ressayer
+           // je vire l anim mcdo
+          $('.cacheSpriteMcdo').css('display','none');
+          $('.conteneurSpriteMcDo').css('left', '900px');
+          // et celle du perso
+          $('.cacheSpriteMoi').css('display','none'); // disparait
+          $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
+          // puis
+          $('.beforeCombat1').css('display','block'); // me ramene au debut du fight
+          fullHp = $('.vieActuel').css('width','100px');
+          hpJoueur = 100;
+        })
       }
       // quand j'arrive sur le fondMcdo 2 alors je fait un :
       if ( positionActuelDuFondLeft == -4500) {
@@ -135,9 +163,9 @@ $(document).ready(function() {
         // Mon perso
         $('.cacheSpriteMoi').css('display','none'); // disparait
         $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
-        monApparition(); // et reaparait
+        setTimeout(monApparition,2500); // et reaparait
         // repartir de la droite (apres 2 sec, temps d'animation du fond matrix) au changement de Fond.
-        setTimeout(spriteMcDo,2000);
+        setTimeout(spriteMcDo,2500);
         $('.cacheSpriteMcdo').css('display','inline-block');
       }
       // Si je depasse -4500, je quite les fonds McDo et j'arrive sur europe
@@ -163,6 +191,21 @@ $(document).ready(function() {
         $('#quatre').css('display','none'); // et le texte aussi
         // puis je fait apparaitre le bouton2 pour ce jeux:
         $('.beforeCombat2').css('display','block'); // je fait apparaitre ma div avec explication + bouton let's fix
+        $('.retry').unbind('click');
+        $('.retry').click(function() { // au click sur le bouton reesayer sa
+          $('.loose').css('opacity',0); // je fait disparaitre la div loose et
+          $('.retry').css('opacity',0); // le bouton ressayer
+           // je vire l anim mcdo
+          $('.cacheSpriteOrdi2').css('display','none');
+          $('.conteneurSpriteOrdi2').css('left', '900px');
+          // et celle du perso
+          $('.cacheSpriteMoi').css('display','none'); // disparait
+          $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
+          // puis
+          $('.beforeCombat2').css('display','block'); // me ramene au debut du fight ordi (2)
+          fullHp = $('.vieActuel').css('width','100px');
+          hpJoueur = 100;
+        })
       }
       if(positionActuelDuFondLeft < -6300 && positionActuelDuFondLeft > -8100){
         positionActuelDuFondLeft = -8100;
@@ -179,6 +222,22 @@ $(document).ready(function() {
         clearInterval(animSrpiteOrdi);
         // je fait apparaitre le bouton3 pour ce jeux:
         $('.beforeCombat3').css('display','block'); // je fait apparaitre ma div avec explication + bouton let's restaure
+        $('.retry').unbind('click');
+        $('.retry').click(function() { // au click sur le bouton reesayer sa
+          $('.loose').css('opacity',0); // je fait disparaitre la div loose et
+          $('.retry').css('opacity',0); // le bouton ressayer
+           // je vire l anim
+          $('.cacheSpriteStatues').css('display','none');
+          $('.conteneurSpriteStatues').css('left', '900px');
+          $('.spriteStatues').css('left', '0px');
+          // et celle du perso
+          $('.cacheSpriteMoi').css('display','none'); // disparait
+          $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
+          // puis
+          $('.beforeCombat3').css('display','block'); // me ramene au debut du fight
+          fullHp = $('.vieActuel').css('width','100px');
+          hpJoueur = 100;
+        })
       }
       // musée 2
       if(positionActuelDuFondLeft == -9000){
@@ -187,8 +246,8 @@ $(document).ready(function() {
         $('.cacheSpriteMoi').css('display','none'); // disparait
         $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
         $('.spriteStatues').css('left', '0px'); // remet la statue au debut de son anim
-        monApparition(); // et reaparait
-        setTimeout(spriteStatues,2000);
+        setTimeout(monApparition, 2500); // et je reaparait
+        setTimeout(spriteStatues, 2500); // ainsi que la statue
         $('.cacheSpriteStatues').css('display','inline-block');
       }
       // colombie

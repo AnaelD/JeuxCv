@@ -68,6 +68,7 @@ var spriteOrdi = function() {
             $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
             // puis
             $('.beforeCombat2').css('display','block'); // me ramene au debut du fight ordi (2)
+            console.log('relance combat Ordi');
             fullHp = $('.vieActuel').css('width','100px');
             hpJoueur = 100;
           })
@@ -81,6 +82,11 @@ var spriteOrdi = function() {
       sensConteneurSpriteOrdi = -5;
       // scaleX(1) pour dire a mon sprite d'aller dans son sens normal
       $('.spriteOrdi').css('transform', 'scaleX(1)');
+      $(document).keydown(function(e){
+        if(positionPersoGauche > 465 && e.which == 39){
+          sensConteneurSpriteOrdi = -15;
+        }
+      });
       // si le conteneur du sprite est trop a gauche (hors ecran) alors:
     } if(positionConteneurSpriteOrdi == conteneurSpriteTropAGaucheOrdi) {
         sensConteneurSpriteOrdi = 5;
@@ -165,20 +171,6 @@ var spriteOrdi2 = function() {
           $('.retry').css('opacity',1); // le bouton ressayer
           clearInterval(animConteurOrdi2);
           clearInterval(animSrpiteOrdi2);
-          $('.retry').click(function() { // au click sur le bouton reesayer sa
-            $('.loose').css('opacity',0); // je fait disparaitre la div loose et
-            $('.retry').css('opacity',0); // le bouton ressayer
-             // je vire l anim mcdo
-            $('.cacheSpriteOrdi2').css('display','none');
-            $('.conteneurSpriteOrdi2').css('left', '900px');
-            // et celle du perso
-            $('.cacheSpriteMoi').css('display','none'); // disparait
-            $('.conteneurSpriteMoi').css('left', '10px'); // repart a gauche
-            // puis
-            $('.beforeCombat2').css('display','block'); // me ramene au debut du fight ordi (2)
-            fullHp = $('.vieActuel').css('width','100px');
-            hpJoueur = 100;
-          })
         }
       }
     }
@@ -190,6 +182,12 @@ var spriteOrdi2 = function() {
       // scaleX(1) pour dire a mon sprite d'aller dans son sens normal
       $('.spriteOrdi2').css('transform', 'scaleX(1)');
       // si le conteneur du sprite est trop a gauche (hors ecran) alors:
+      $(document).keydown(function(e){
+        if(positionPersoGauche > 465 && e.which == 39){
+          sensConteneurSpriteOrdi2 = -15;
+          console.log(positionPersoGauche + 'dans sprite ordi');
+        }
+      });
     } if(positionConteneurSpriteOrdi2 == conteneurSpriteTropAGaucheOrdi2) {
         sensConteneurSpriteOrdi2 = 5;
         // scaleX(-1) pour dire a mon sprite d aller dans le sens inverse de sa base
